@@ -1,13 +1,12 @@
 package com.ea.test.Features.SeleniumTest;
 
 import com.ea.test.Pages.Homepage;
-import com.ea.test.Pages.LoginPage;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class LoginTest {
+public class HomePageTest {
     private WebDriver _driver=null;
 
     @Before
@@ -18,12 +17,11 @@ public class LoginTest {
         _driver.navigate().to("https://automationteststore.com/index.php");
     }
     @Test
-    public void Login()
+    public void HomePageTest1()
     {
-        Homepage page1=new Homepage(_driver);
-        page1.HomePageValidation();
-        LoginPage page=new LoginPage(_driver);
-        page.Login("Usertest1324", "Test1234");
+        Homepage page=new Homepage(_driver);
+        String title=_driver.getTitle();
+        System.out.println("Title of the page is: "+title);
+        page.HomePageValidation();
     }
-
 }
