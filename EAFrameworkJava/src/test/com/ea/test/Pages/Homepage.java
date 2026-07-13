@@ -7,17 +7,14 @@ import org.openqa.selenium.support.How;
 import com.ea.framework.base.BasePage;
 
 public class Homepage extends BasePage {
-    public Homepage(WebDriver driver) {
-        super(driver);
+    public Homepage() {
     }
-    @FindBy(how=How.XPATH,using="//a[normalize-space()='Login or register']")
-    private WebElement LoginOrRegisterLink;
-    @FindBy(how= How.XPATH,using ="//button[normalize-space()='Continue']")
-    private WebElement ContinueButton;
-    public void HomePageValidation()
+    @FindBy(how=How.LINK_TEXT,using ="View Employees")
+    private WebElement lnkEmployeesList;
+    @FindBy(how=How.LINK_TEXT,using="Login")
+    private WebElement lnkLogin;
+    public void clickLogin()
     {
-        LoginOrRegisterLink.click();
-        //ContinueButton.click();
+        lnkLogin.click();
     }
-
 }
